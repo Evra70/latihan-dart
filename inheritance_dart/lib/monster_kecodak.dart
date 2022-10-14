@@ -1,3 +1,4 @@
+import 'package:inheritance_dart/drink_ability_mixin.dart';
 import 'package:inheritance_dart/flying_monster.dart';
 import 'package:inheritance_dart/monster.dart';
 
