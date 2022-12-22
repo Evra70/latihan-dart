@@ -1,0 +1,86 @@
+//Interface specific untuk tujuan tertentu
+//sehingga tidak memaksa class menggunakan fungsi yang tidak diperlukan
+
+//contoh salah :
+abstract class IHeroAbility{
+    void heal();
+    void castMagic();
+    void stealMoney();
+}
+
+abstract class Hero implements IHeroAbility{
+    void regularAttack();
+}
+///////////////////////////////////////
+class Thief extends Hero{
+    @override
+    void heal();//do nothing
+    @override
+    void castMagic();//do nothing
+    @override
+    void stealMoney();
+    @override
+    void regularAttack();
+}
+///////////////////////////
+class WhiteMage extends Hero{
+    @override
+    void heal();
+    @override
+    void castMagic();
+    @override
+    void stealMoney();//do nothing
+    @override
+    void regularAttack();
+}
+/////////////////////////////
+class BlackMage extends Hero{
+    @override
+    void heal();//do nothing
+    @override
+    void castMagic();
+    @override
+    void stealMoney();//do nothing
+    @override
+    void regularAttack();
+}
+
+//contoh Benar 
+class Hero {
+    void regularAttack();
+}
+///////////////////////////////////////
+abstract class IMagicCaster{
+    void castMagic();
+}
+
+abstract class IHealer{
+    void heal();
+}
+
+abstract class IStealer{
+    void stealMoney();
+}
+////////////////////////////////////////
+class Thief extends Hero implements IStealer{
+    @override
+    void stealMoney();
+    @override
+    void regularAttack();
+}
+///////////////////////////
+class WhiteMage extends Hero implements IHealer,IMagicCaster{
+    @override
+    void heal();
+    @override
+    void castMagic();
+    @override
+    void regularAttack();
+}
+/////////////////////////////
+class Thief Hero implements IMagicCaster{
+    @override
+    void castMagic();
+    @override
+    void regularAttack();
+}

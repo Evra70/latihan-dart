@@ -1,0 +1,30 @@
+//Class tertutup pada modifikasi tetapi terbuka pada penambahan fitur
+
+//Contoh kasus
+//class ingin dilakukan penambahan fitur robot bisa melakukan hal lain
+//selain berbicara dan berjalan
+class MyRobot{
+    void talk();
+    void walk(); 
+}
+
+//contoh salah
+//dilakukan modifikasi yang kontak langsung dengan class
+class MyRobot{
+    void talk();
+    void killCockroach();
+    void fly(); 
+}
+//kekurangan akan mempengaruhi program lain yang memanggil my robot 
+//dengan fungsi walk
+
+//contoh benar :
+class MyRobot{
+    void talk();
+    void walk(); 
+}
+
+class MySuperRobot extends MyRobot{
+    void killCockroach();
+    void fly(); 
+}

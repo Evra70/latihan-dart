@@ -1,0 +1,31 @@
+//Setiap class turunan harus memiliki sifat dan perilaku 
+//yang sama dengan turunannya 
+
+//contoh salah :
+class Duck{
+    void swim();
+    void quck();
+    void eat();
+}
+
+class RubberDuck extends Duck{
+    @override
+    void eat();//do nothing
+}
+
+//bentuk salah karena tidak melakukan fungsi yang sama dari parent nya
+
+//contoh benar :
+class Duck{
+    void swim();
+    void quck();
+    void eat();
+}
+
+//fyi malard is kind of duck
+class Malard extends {
+    @override
+    void eat();//do eat with diff way
+}
+
+//jadi Malard tetap melakukan fungsi yang sama dengan parent nya

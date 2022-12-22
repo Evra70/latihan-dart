@@ -1,0 +1,52 @@
+//High Level Module tidak boleh bergantung pada low Level 
+//keduanya harus bergantung pada abstraction
+
+//abstraction tidak boleh bergantung pada detail
+
+//contoh salah :
+
+class User{
+    //sesuatu yg berhubungan dengan user
+}
+
+class UserManager{
+    void saveUserData(User user){
+        //connect to firebase
+        //save data
+    }
+}
+
+//contoh benar :
+class User{
+    //sesuatu yg berhubungan dengan user
+
+}
+class UserManager{
+    final IDataStorage dataStorage;
+
+    UserManager(this.dataStorage);
+
+    void saveUserData(User user){
+        dataStorage.saveData(user);
+    }
+}
+
+abstract class IDataStorage{
+    void saveData(User user);
+}
+
+class FirebaseStorage implements IDataStorage{
+    @override
+    void saveData(User user){
+        //connect to firebase
+        //save data
+    }
+}
+
+class LocalStorage implements IDataStorage{
+    @override
+    void saveData(User user){
+        //connect to local storage
+        //save data
+    }
+}

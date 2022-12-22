@@ -1,0 +1,30 @@
+//Saat membuat class mengarah pada fungsi/tujuan yang jelas
+//contoh salah :
+class Car{
+    void mobilNyala();
+    void mobilMati();
+
+    void acNyala();
+    void acMati();
+
+    void mulaiMusik();
+}
+
+//contoh benar:
+class Car{
+    Radio radio;
+    AirCon airCon;
+
+    void mobilNyala();
+    void mobilMati();
+
+}
+
+class AirCon{
+    void acNyala();
+    void acMati();
+}
+
+class Radio{
+    void mulaiMusik();
+}
